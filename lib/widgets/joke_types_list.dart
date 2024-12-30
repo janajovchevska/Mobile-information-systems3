@@ -16,17 +16,17 @@ class JokeTypesList extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           child: SizedBox(
             height: 100,
-          child: ListTile(
-            title: Center(child: Text(jokeTypes[index],style: const TextStyle(fontSize: 25,fontWeight: FontWeight.w400,),textAlign: TextAlign.center,)),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => JokesByTypeScreen(type: jokeTypes[index]),
-                ),
-              );
-            },
-          ),),
+            child: ListTile(
+              title: Center(child: Text(jokeTypes[index],style: const TextStyle(fontSize: 25,fontWeight: FontWeight.w400,),textAlign: TextAlign.center,)),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => JokesByTypeScreen(type: jokeTypes[index]),
+                  ),
+                );
+              },
+            ),),
         );
       },
     );

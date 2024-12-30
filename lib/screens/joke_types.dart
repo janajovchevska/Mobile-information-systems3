@@ -3,6 +3,7 @@ import 'package:mis_labs2/services/api_services.dart';
 import 'dart:convert';
 import 'package:mis_labs2/widgets/joke_types_list.dart';
 import 'package:mis_labs2/screens/random_joke.dart';
+import 'package:mis_labs2/screens/favorite_jokes.dart';
 
 
 class JokeTypesScreen extends StatefulWidget {
@@ -45,6 +46,17 @@ class _JokeTypesScreenState extends State<JokeTypesScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const RandomJokeScreen(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.favorite, size: 40),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FavoriteJokesScreen(),
                 ),
               );
             },

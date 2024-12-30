@@ -4,24 +4,24 @@ import 'package:mis_labs2/services/api_services.dart';
 import 'dart:convert';
 import 'package:mis_labs2/widgets/jokes_list.dart';
 
-class JokesByTypeScreen extends StatefulWidget {
 
+class JokesByTypeScreen extends StatefulWidget {
   final String type;
-  const JokesByTypeScreen({super.key,required this.type});
+  const JokesByTypeScreen({super.key, required this.type});
 
   @override
   State<JokesByTypeScreen> createState() => _JokesByTypeScreenState();
 }
 
 class _JokesByTypeScreenState extends State<JokesByTypeScreen> {
-
-  List<Joke> jokes=[];
+  List<Joke> jokes = [];
 
   @override
   void initState() {
     super.initState();
     getJokesByTypeFromAPI();
   }
+
   void getJokesByTypeFromAPI() async {
     ApiService.getJokesByType(widget.type).then((response) {
       var data = jsonDecode(response.body);
@@ -32,6 +32,7 @@ class _JokesByTypeScreenState extends State<JokesByTypeScreen> {
       print("Failed to load jokes of type: $e");
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
